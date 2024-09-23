@@ -1,0 +1,6 @@
+LAX,Los Angeles
+SEA,Seattle
+BZN,Bozeman
+ORD,Chicago
+BOS,Boston
+MSP,Minneapolis/Saint Paul
