@@ -84,11 +84,46 @@ public class DoublyLinkedList {
 					tail.setNext(null);
 				}
 				else {
+					Node prevNode = current.getPrev();
+					Node nextNode = current.getNext();
 					
+					prevNode.setNext(nextNode);
+					nextNode.setPrev(prevNode);
 				}
 			}
 			current = current.getNext();
 		}
 	}
 	
+	public void remove(int s) {
+		Node current = head;
+		
+		for(int i = 0; i < s - 1; i++) {
+			current = current.getNext();
+		}
+		if(current == head) {
+			head = current.getNext();
+			head.setPrev(null);
+		}
+		else if(current == tail) {
+			tail = current.getPrev();
+			tail.setNext(null);
+		}
+		else {
+			Node prevNode = current.getPrev();
+			Node nextNode = current.getNext();
+			
+			prevNode.setNext(nextNode);
+			nextNode.setPrev(prevNode);
+		}
+	}
+	
+	
+	public void printLinkedListReversed() {
+		Node current = tail;
+		while(current != null) {
+			System.out.println(current.getData());
+			current = current.getPrev();
+		}
+	}
 }
