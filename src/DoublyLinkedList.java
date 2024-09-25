@@ -73,13 +73,13 @@ public class DoublyLinkedList {
 	
 	public void remove(String search) {
 		Node current = head;
-		while(head != null) {
+		while(current != null) {
 			if(current.getCode().equals(search)) {
 				if(current == head) {
 					head = current.getNext();
 					head.setPrev(null);
 				}
-				else if(current == head) {
+				else if(current == tail) {
 					tail = current.getPrev();
 					tail.setNext(null);
 				}
@@ -87,6 +87,7 @@ public class DoublyLinkedList {
 					
 				}
 			}
+			current = current.getNext();
 		}
 	}
 	
